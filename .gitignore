@@ -1,0 +1,30 @@
+# Virtual Environment
+venv/
+env/
+__pycache__/
+
+# Python cache
+*.pyc
+*.pyo
+*.pyd
+
+# Model weights
+*.pth
+*.pt
+
+# Scaler / serialized files
+*.pkl
+
+# Dataset
+data/
+*.csv
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
