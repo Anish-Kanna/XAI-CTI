@@ -9,7 +9,7 @@ from model import XAI_CTI_Model
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-X_train, X_test, y_train, y_test, feature_names = load_data("data/cic_ids.csv")
+X_train, X_test, y_train, y_test, feature_names = load_data("data/full_week.csv")
 
 model = XAI_CTI_Model(input_dim=X_train.shape[1]).to(device)
 model.load_state_dict(torch.load("xai_cti_model_adv.pth", map_location=device))

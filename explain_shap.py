@@ -9,11 +9,11 @@ from model import XAI_CTI_Model
 device = torch.device("cpu")
 
 print("Loading data...")
-X_train, X_test, y_train, y_test, feature_names = load_data("data/cic_ids.csv")
+X_train, X_test, y_train, y_test, feature_names = load_data("data/full_week.csv")
 
 print("Loading trained model...")
 model = XAI_CTI_Model(input_dim=X_train.shape[1])
-model.load_state_dict(torch.load("xai_cti_model.pth", map_location=device))
+model.load_state_dict(torch.load("xai_cti_model_adv.pth", map_location=device))
 model.eval()
 
 # Small background set for SHAP

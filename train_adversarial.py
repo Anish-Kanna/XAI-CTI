@@ -10,7 +10,7 @@ from model import XAI_CTI_Model
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 print("Loading data...")
-X_train, X_test, y_train, y_test, feature_names = load_data("data/cic_ids.csv")
+X_train, X_test, y_train, y_test, feature_names = load_data("data/full_week.csv")
 
 train_loader = DataLoader(
     TensorDataset(X_train, y_train),
@@ -22,7 +22,7 @@ model = XAI_CTI_Model(input_dim=X_train.shape[1]).to(device)
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
-epsilon = 0.1
+epsilon = 0.01
 epochs = 5
 
 def fgsm_attack(model, data, target, epsilon):

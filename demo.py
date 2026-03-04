@@ -11,7 +11,7 @@ device = torch.device("cpu")
 print("\n========== XAI-CTI DEMO ==========\n")
 
 # Load data
-X_train, X_test, y_train, y_test, feature_names = load_data("data/cic_ids.csv")
+X_train, X_test, y_train, y_test, feature_names = load_data("data/full_week.csv")
 
 # Load adversarially trained model (stronger one)
 model = XAI_CTI_Model(input_dim=X_train.shape[1])

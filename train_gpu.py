@@ -11,11 +11,11 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("Using device:", device)
 
 # Load data
-X_train, X_test, y_train, y_test, feature_names = load_data("data/cic_ids.csv")
+X_train, X_test, y_train, y_test, feature_names = load_data("data/full_week.csv")
 
 train_loader = DataLoader(
     TensorDataset(X_train, y_train),
-    batch_size=16,
+    batch_size=8,
     shuffle=True
 )
 
