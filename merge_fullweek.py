@@ -4,7 +4,7 @@ import os
 
 data_path = "data"
 
-# Get all csv files in data folder
+# including all the csv files in data folder
 files = glob.glob(os.path.join(data_path, "*.csv"))
 
 df_list = []

@@ -10,7 +10,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("Using device:", device)
 
-# Load data
+#data loading
 X_train, X_test, y_train, y_test, feature_names = load_data("data/full_week.csv")
 
 train_loader = DataLoader(
@@ -47,7 +47,7 @@ for epoch in range(epochs):
 
 print("Training complete.")
 
-# Evaluation
+# Evaluation of the data
 model.eval()
 test_loader = DataLoader(
     TensorDataset(X_test, y_test),

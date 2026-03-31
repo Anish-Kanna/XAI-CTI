@@ -10,15 +10,14 @@ device = torch.device("cpu")
 
 print("\n========== XAI-CTI DEMO ==========\n")
 
-# Load data
 X_train, X_test, y_train, y_test, feature_names = load_data("data/full_week.csv")
 
-# Load adversarially trained model (stronger one)
+# Loading the adversarially trained model
 model = XAI_CTI_Model(input_dim=X_train.shape[1])
 model.load_state_dict(torch.load("xai_cti_model_adv.pth", map_location=device))
 model.eval()
 
-# Pick one ATTACK sample for demo
+# Attack sample
 for i in range(len(y_test)):
     if y_test[i] == 1:
         sample = X_test[i].unsqueeze(0)

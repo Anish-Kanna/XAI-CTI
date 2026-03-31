@@ -11,7 +11,7 @@ device = torch.device("cpu")
 
 print("\n========== XAI-CTI LIVE DEMO ==========\n")
 
-# ---------------- LOAD TRAIN DATA (for scaler) ----------------
+#LOAD TRAIN DATA (for scaler)
 train_df = pd.read_csv("data/full_week.csv")
 train_df.columns = train_df.columns.str.strip()
 
@@ -26,7 +26,7 @@ X_train_scaled = scaler.fit_transform(X_train)
 
 X_train_tensor = torch.tensor(X_train_scaled, dtype=torch.float32)
 
-# ---------------- LOAD NEW DATA (REAL TRAFFIC) ----------------
+# LOAD NEW DATA
 print("Loading new traffic data...")
 
 new_df = pd.read_csv("data/insane_dos.csv")  # 👈 your Wireshark converted file
@@ -46,21 +46,21 @@ for col in feature_names:
     if col not in new_df.columns:
         new_df[col] = 0  # fill missing features with 0
 
-# Remove extra columns
+# Removing extra columns
 X_new = new_df[feature_names]
 
 X_new_scaled = scaler.transform(X_new)
 X_new_tensor = torch.tensor(X_new_scaled, dtype=torch.float32)
 
-# ---------------- LOAD MODEL ----------------
+# LOADING THE MODEL
 model = XAI_CTI_Model(input_dim=X_new_tensor.shape[1])
 model.load_state_dict(torch.load("xai_cti_model_adv.pth", map_location=device))
 model.eval()
 
-# ---------------- PICK SAMPLE ----------------
-sample = X_new_tensor[0].unsqueeze(0)  # you can change index
+# PICK SAMPLE
+sample = X_new_tensor[0].unsqueeze(0)
 
-# ---------------- PREDICTION ----------------
+# PREDICTION 
 with torch.no_grad():
     output = model(sample)
     probs = torch.softmax(output, dim=1)
@@ -72,7 +72,7 @@ label = "ATTACK" if prediction == 1 else "BENIGN"
 print(f"Prediction: {label}")
 print(f"Confidence: {confidence:.4f}")
 
-# ---------------- THREAT LEVEL ----------------
+# THREAT LEVEL
 if prediction == 1 and confidence > 0.9:
     threat_level = "HIGH"
 elif prediction == 1:
@@ -82,7 +82,7 @@ else:
 
 print(f"Threat Level: {threat_level}\n")
 
-# ---------------- SHAP EXPLANATION ----------------
+# SHAP EXPLANATION
 background = X_train_tensor[:50]
 explainer = shap.DeepExplainer(model, background)
 

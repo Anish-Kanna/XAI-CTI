@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from preprocessing import load_data
 from model import XAI_CTI_Model
 
-# Force CPU (SHAP does not need GPU)
+# Forcing the use of cpu
 device = torch.device("cpu")
 
 print("Loading data...")
@@ -31,7 +31,7 @@ shap_values = explainer.shap_values(sample, check_additivity=False)
 # Convert to numpy safely
 shap_vals = np.array(shap_values)
 
-# Handle shape automatically
+# Handling the shape automatically
 # If shape is (samples, features, classes)
 if len(shap_vals.shape) == 3:
     shap_vals = shap_vals[:, :, 1]  # Select class 1 (Attack)
