@@ -65,11 +65,11 @@ Standard Training        Adversarial Training (FGSM)
     ▼                         ▼
 xai_cti_model.pth      xai_cti_model_adv.pth
                               │
-         ┌────────────────────┼────────────────────┐
-         ▼                    ▼                     ▼
-   SHAP Explainer       Symbolic Rules        Robustness Curve
-  (explain_shap.py)     (symbolic.py)       (robustness_curve.py)
-  shap_summary.png     Threat Level           robustness_curve.png
+         ┌────────────────────┼
+         ▼                    ▼                     
+   SHAP Explainer       Symbolic Rules        
+  (explain_shap.py)     (symbolic.py)       
+  shap_summary.png     Threat Level          
 ```
 
 **How a prediction works (demo pipeline):**
