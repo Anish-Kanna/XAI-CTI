@@ -2,7 +2,7 @@
 
 &nbsp;
 
-# 🛡️ XAI-CTI
+# 🛡️ Hybrid Transformer–CNN Neuro-Symbolic Explainable AI for Cyber Threat Intelligence: Advancing Transparency and Adversarial Robustness
 ### Explainable AI for Cyber Threat Intelligence
 
 **School of Engineering, Dayananda Sagar University**
