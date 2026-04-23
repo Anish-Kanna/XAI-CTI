@@ -552,7 +552,7 @@ python3 demo2.py
 Decision Logic:
 ├─ If prediction=ATTACK & confidence>90%  → 🔴 HIGH THREAT
 ├─ If prediction=ATTACK & confidence<90%  → 🟡 MEDIUM THREAT
-└─ If prediction=BENIGN                     → 🟢 LOW THREAT
+└─ If prediction=BENIGN                   → 🟢 LOW THREAT
 ```
 
 ---
