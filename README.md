@@ -81,7 +81,7 @@ The result is an **interpretable, robust, production-grade IDS** that security t
 ### Core Innovation
 
 **XAI-CTI** combines three complementary AI techniques to achieve **transparent and robust intrusion detection**:
-
+```
 Network Traffic Features (79 dimensions)
     ↓
 ├─ Hybrid CNN-Transformer Model (96.4% accuracy)
@@ -89,9 +89,9 @@ Network Traffic Features (79 dimensions)
 └─ Adversarial Training (88% robustness under attack)
     ↓
 Prediction + Confidence + Explanation + Threat Level
-
+```
 ### Architecture Overview & Workflow
-
+```
 Raw CSV (CIC-IDS Dataset)
          │
          ▼
@@ -121,7 +121,7 @@ xai_cti_model.pth      xai_cti_model_adv.pth
    SHAP Explainer       Symbolic Rules        
   (explain_shap.py)     (symbolic.py)       
   shap_summary.png     Threat Level 
-
+```
 ### Design Philosophy
 
 -> **Never trust, always verify** — Multiple signals voted on access
@@ -550,9 +550,15 @@ python3 demo2.py
 
 ```
 Decision Logic:
+<<<<<<< HEAD
 ├─ If prediction=ATTACK & confidence>90%  →  HIGH THREAT
 ├─ If prediction=ATTACK & confidence<90%  →  MEDIUM THREAT
 └─ If prediction=BENIGN                   →  LOW THREAT
+=======
+├─ If prediction=ATTACK & confidence>90%  → 🔴 HIGH THREAT
+├─ If prediction=ATTACK & confidence<90%  → 🟡 MEDIUM THREAT
+└─ If prediction=BENIGN                   → 🟢 LOW THREAT
+>>>>>>> e58e0783918eeaca09c74ac8229a0266d47d09ab
 ```
 
 ---
