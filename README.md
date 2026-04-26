@@ -125,8 +125,11 @@ xai_cti_model.pth      xai_cti_model_adv.pth
 ### Design Philosophy
 
 -> **Never trust, always verify** — Multiple signals voted on access
+
 -> **Interpretability by design** — Explanations at every layer
+
 -> **Robustness first** — Adversarially trained from day one
+
 -> **Production-ready** — Sub-60ms inference, lightweight (~18k parameters)
 
 ---
@@ -142,7 +145,7 @@ xai_cti_model.pth      xai_cti_model_adv.pth
 | **Inference Layer** | SHAP + symbolic explainability | Trustworthy SOC integration |
 
 ### Architecture Diagram
-
+```
 Network Traffic Features (79 dimensions)
     ↓
 [CNN Block]
@@ -164,7 +167,7 @@ Network Traffic Features (79 dimensions)
 [Softmax + Decision]
   ├─ Confidence: 0-100%
   └─ Prediction: BENIGN or ATTACK
-
+```
 ---
 
 ## 4. Core Principles
@@ -555,9 +558,9 @@ Decision Logic:
 ├─ If prediction=ATTACK & confidence<90%  →  MEDIUM THREAT
 └─ If prediction=BENIGN                   →  LOW THREAT
 =======
-├─ If prediction=ATTACK & confidence>90%  → 🔴 HIGH THREAT
-├─ If prediction=ATTACK & confidence<90%  → 🟡 MEDIUM THREAT
-└─ If prediction=BENIGN                   → 🟢 LOW THREAT
+├─ If prediction=ATTACK & confidence>90%  →  HIGH THREAT
+├─ If prediction=ATTACK & confidence<90%  →  MEDIUM THREAT
+└─ If prediction=BENIGN                   →  LOW THREAT
 >>>>>>> e58e0783918eeaca09c74ac8229a0266d47d09ab
 ```
 
@@ -616,10 +619,15 @@ Accuracy (%)
 ### Future Enhancements
 
 ✅ Multi-class classification (8+ attack types)
+
 ✅ Online learning pipeline (continuous retraining)
+
 ✅ Federated learning (privacy-preserving training)
+
 ✅ Mobile deployment (edge inference)
+
 ✅ Real-time streaming analysis
+
 ✅ Integration with SIEM platforms
 
 ---
