@@ -1,4 +1,5 @@
-# XAI-CTI — Explainable AI for Cyber Threat Intelligence
+# Hybrid Transformer–CNN Neuro-Symbolic Explainable AI for Cyber Threat Intelligence: Advancing Transparency and Adversarial Robustness
+### Explainable AI for Cyber Threat Intelligence
 
 Quick start guide for executing the project.
 

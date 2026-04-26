@@ -2,7 +2,7 @@
 
 &nbsp;
 
-# 🛡️ Hybrid Transformer–CNN Neuro-Symbolic Explainable AI for Cyber Threat Intelligence: Advancing Transparency and Adversarial Robustness
+# Hybrid Transformer–CNN Neuro-Symbolic Explainable AI for Cyber Threat Intelligence: Advancing Transparency and Adversarial Robustness
 ### Explainable AI for Cyber Threat Intelligence
 
 **School of Engineering, Dayananda Sagar University**
@@ -29,7 +29,7 @@
 
 ---
 
-## 🔭 Overview
+## Overview
 
 Modern Intrusion Detection Systems (IDS) achieve high accuracy but operate as black boxes — security analysts cannot understand *why* a traffic flow is flagged as malicious. This creates a critical trust gap in SOC operations. Simultaneously, standard ML models are highly vulnerable to adversarial perturbations: attackers can craft subtle traffic modifications that fool the detector while remaining imperceptible to genuine users.
 
@@ -45,7 +45,7 @@ The result is an **interpretable, robust, production-grade IDS** that security t
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 1. [Problem Statement](#1--problem-statement)
 2. [Proposed Approach](#2--proposed-approach)
@@ -60,7 +60,7 @@ The result is an **interpretable, robust, production-grade IDS** that security t
 
 ---
 
-## 1. 🔍 Problem Statement
+## 1. Problem Statement
 
 ### Three Critical Gaps in Current IDS
 
@@ -76,7 +76,7 @@ The result is an **interpretable, robust, production-grade IDS** that security t
 
 ---
 
-## 2. 🏗️ Proposed Approach
+## 2. Proposed Approach
 
 ### Core Innovation
 
@@ -124,14 +124,14 @@ xai_cti_model.pth      xai_cti_model_adv.pth
 
 ### Design Philosophy
 
-✅ **Never trust, always verify** — Multiple signals voted on access
-✅ **Interpretability by design** — Explanations at every layer
-✅ **Robustness first** — Adversarially trained from day one
-✅ **Production-ready** — Sub-60ms inference, lightweight (~18k parameters)
+-> **Never trust, always verify** — Multiple signals voted on access
+-> **Interpretability by design** — Explanations at every layer
+-> **Robustness first** — Adversarially trained from day one
+-> **Production-ready** — Sub-60ms inference, lightweight (~18k parameters)
 
 ---
 
-## 3. 🏛️ System Architecture
+## 3. System Architecture
 
 ### Three-Layer Design Philosophy
 
@@ -167,7 +167,7 @@ Network Traffic Features (79 dimensions)
 
 ---
 
-## 4. 💡 Core Principles
+## 4. Core Principles
 
 ### 1. **Explainability by Design**
 - SHAP values quantify each feature's contribution to predictions
@@ -299,16 +299,16 @@ For 5 epochs:
 
 ---
 
-## 4. 📊 Performance Results
+## 4. Performance Results
 
 ### Anomaly Detection Accuracy (NSL-KDD Dataset)
 
 | Metric | LSTM Baseline | CNN Baseline | **XAI-CTI Transformer** |
 |--------|:---:|:---:|:---:|
-| 🎯 **Accuracy** | 91.2% | 93.1% | **96.4%** |
-| 📈 **F1-Score** | 89.6% | 90.8% | **93.1%** |
-| 🔴 **False Positive Rate** | 8.5% | 6.7% | **2.3%** ← 73% improvement |
-| ✅ **Precision** | 88.9% | 91.2% | **94.6%** |
+| **Accuracy** | 91.2% | 93.1% | **96.4%** |
+| **F1-Score** | 89.6% | 90.8% | **93.1%** |
+| **False Positive Rate** | 8.5% | 6.7% | **2.3%** ← 73% improvement |
+| **Precision** | 88.9% | 91.2% | **94.6%** |
 
 **Key Insight**: 2.3% FPR = fewer false alarms for SOC teams (significant operational benefit)
 
@@ -327,46 +327,46 @@ Tested with FGSM attacks at ε=0.1 (small imperceptible perturbations):
 
 | Metric | Value | Significance |
 |--------|:---:|---|
-| ⚡ **Decision Latency** | < 60 ms | Real-time inline deployment viable |
-| 🧠 **Model Parameters** | 18,562 | Lightweight, fits on edge devices |
-| 💾 **Model Size** | ~75 KB | Minimal storage footprint |
-| 🎯 **Accuracy** | 96.4% | Best-in-class vs baselines |
-| 🤝 **Trust Prediction** | 0.93 AUC | Strong entity-level trust scoring |
-| 📝 **Explainability** | SHAP + Symbolic | Transparent decision reasoning |
+| **Decision Latency** | < 60 ms | Real-time inline deployment viable |
+| **Model Parameters** | 18,562 | Lightweight, fits on edge devices |
+| **Model Size** | ~75 KB | Minimal storage footprint |
+| **Accuracy** | 96.4% | Best-in-class vs baselines |
+| **Trust Prediction** | 0.93 AUC | Strong entity-level trust scoring |
+| **Explainability** | SHAP + Symbolic | Transparent decision reasoning |
 
 ---
 
-## 5. 🗂️ System Architecture
+## 5. System Architecture
 
 ### Project Structure
 
 ```
 XAI_CTI_Project/
-├── model.py                    # 🧠  Hybrid CNN-Transformer architecture
-├── preprocessing.py            # 🔧  Data loading, normalization, scaler
-├── train_gpu.py               # 🚀  Standard supervised training
-├── train_adversarial.py       # ⚔️  Adversarial training with FGSM
-├── adversarial_test.py        # 🛡️  Robustness evaluation
-├── robustness_curve.py        # 📈  Plot accuracy vs attack strength
-├── explain_shap.py            # 📊  Generate SHAP explanations
-├── demo.py                    # 🎬  Live inference demo
-├── demo2.py                   # 🎬  Production inference (real data)
-├── symbolic.py                # 📝  Rule-based explanations
-├── merge_fullweek.py          # 🔀  Consolidate multiple CSVs
+├── model.py                   # Hybrid CNN-Transformer architecture
+├── preprocessing.py           # Data loading, normalization, scaler
+├── train_gpu.py               # Standard supervised training
+├── train_adversarial.py       # Adversarial training with FGSM
+├── adversarial_test.py        # Robustness evaluation
+├── robustness_curve.py        # Plot accuracy vs attack strength
+├── explain_shap.py            # Generate SHAP explanations
+├── demo.py                    # Live inference demo
+├── demo2.py                   # Production inference (real data)
+├── symbolic.py                # Rule-based explanations
+├── merge_fullweek.py          # Consolidate multiple CSVs
 │
 ├── data/
-│   ├── full_week.csv          # 📊  Merged training dataset (1M+ samples)
-│   ├── dos_data.csv           # ⚠️  Malicious traffic
-│   ├── Monday-Friday.csv      # 📆  Daily network logs
-│   └── insane_dos.csv         # 🚨  Intense attack traffic
+│   ├── full_week.csv          # Merged training dataset (1M+ samples)
+│   ├── dos_data.csv           # Malicious traffic
+│   ├── Monday-Friday.csv      # Daily network logs
+│   └── insane_dos.csv         # Intense attack traffic
 │
 ├── checkpoints/
-│   ├── xai_cti_model.pth      # 💾  Standard model weights
-│   ├── xai_cti_model_adv.pth  # 💾  Adversarially trained (preferred)
-│   ├── scaler.pkl             # 🔐  Feature normalization params
-│   └── shap_summary.png       # 📊  Feature importance visualization
+│   ├── xai_cti_model.pth      # Standard model weights
+│   ├── xai_cti_model_adv.pth  # Adversarially trained (preferred)
+│   ├── scaler.pkl             # Feature normalization params
+│   └── shap_summary.png       # Feature importance visualization
 │
-└── requirements.txt           # 📦  Python dependencies
+└── requirements.txt           # Python dependencies
 ```
 
 ### Data Flow Architecture
@@ -397,9 +397,9 @@ New Traffic → Scaler → Model → SHAP + Symbolic → Decision + Explanation
 
 ---
 
-## 6. 🧩 Core Components
+## 6. Core Components
 
-### 🧠 Model Architecture (CNN-Transformer Hybrid)
+### Model Architecture (CNN-Transformer Hybrid)
 
 ```
 Layer           Input Shape       Processing        Output Shape
@@ -418,7 +418,7 @@ Softmax         [B, 2]            Probabilities     [B, 2] ∈ [0,1]
 
 **Parameters**: ~18,562 total (lightweight!)
 
-### 📊 Feature Space (79 Dimensions)
+### Feature Space (79 Dimensions)
 
 | Category | Features | Examples |
 |----------|:---:|---|
@@ -429,7 +429,7 @@ Softmax         [B, 2]            Probabilities     [B, 2] ∈ [0,1]
 | **Advanced** | 49 | Entropy,  init window bytes, subflow stats |
 | **Total** | **79** | Standardized to μ=0, σ=1 |
 
-### 🔐 SHAP Explainability
+### SHAP Explainability
 
 **What it calculates**: Contribution of each feature to the prediction
 
@@ -447,7 +447,7 @@ Interpretation:
 High byte volume + high packet rate + unusual timing = ATTACK
 ```
 
-### 📝 Symbolic Reasoning
+### Symbolic Reasoning
 
 **Simple rule-based explanations**:
 
@@ -466,7 +466,7 @@ else:
 
 ---
 
-## 7. 🚀 Implementation Guide
+## 7. Implementation Guide
 
 ### Setup & Installation
 
@@ -550,14 +550,14 @@ python3 demo2.py
 
 ```
 Decision Logic:
-├─ If prediction=ATTACK & confidence>90%  → 🔴 HIGH THREAT
-├─ If prediction=ATTACK & confidence<90%  → 🟡 MEDIUM THREAT
-└─ If prediction=BENIGN                     → 🟢 LOW THREAT
+├─ If prediction=ATTACK & confidence>90%  →  HIGH THREAT
+├─ If prediction=ATTACK & confidence<90%  →  MEDIUM THREAT
+└─ If prediction=BENIGN                   →  LOW THREAT
 ```
 
 ---
 
-## 9. 🛡️ Adversarial Robustness
+## 9. Adversarial Robustness
 
 ### Attack Method: FGSM (Fast Gradient Sign Method)
 
@@ -596,7 +596,7 @@ Accuracy (%)
 
 ---
 
-## 10. ⚠️ Limitations & Path Forward
+## 10. Limitations & Path Forward
 
 | # | Limitation | Impact | Mitigation |
 |---|---|---|---|
@@ -620,7 +620,7 @@ Accuracy (%)
 
 ---
 
-## 👥 Project Team
+## Project Team
 
 <table>
   <tr>
@@ -643,7 +643,7 @@ Accuracy (%)
 
 ---
 
-## 🎓 Faculty Mentor
+## Faculty Mentor
 
 <table>
   <tr>
